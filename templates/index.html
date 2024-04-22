@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+          integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+          crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{url_for('static', filename='css/style.css')}"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <title>IRI: удобный каталог манги</title>
+</head>
+<header data-bs-theme="dark">
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Вход</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Регистрация</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" aria-disabled="true">Выйти из аккаунта</a>
+                </li>
+            </ul>
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="манга, новелла, книги" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Поиск</button>
+            </form>
+        </div>
+    </nav>
+</header>
+<body data-bs-theme="dark">
+<div class="album py-5 bg-body-tertiary">
+    <div class="container">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            <div class="col">
+                <div class="card shadow-sm">
+                    <img src={{Img_1}} alt="здесь должна была быть картинка, но не нашлась">
+                    <text x="50%" y="50%" fill="#eceeef" dy=".3em">{{Name_1}} </text>
+                    <div class="card-body">
+                        <p class="card-text">{{Description_of_the_title_1}}</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-sm btn-outline-secondary" onclick="location.href='/{{link_1}}'">Читать</button>
+                                <button type="button" class="btn btn-sm btn-outline-secondary">Прочитать описание</button>
+                            </div>
+                            <small class="text-body-secondary">{{estimation_1}} Прсмотров</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <label for="classSelect">Тема сайта</label>
+    <select id="classSelect" class="form-control" name="class">
+        <option>Темная</option>
+            <p id="dark"></p>
+        <option>Светлая</option>
+            <p id="light"></p>
+    </select>
+</div>
+</body>

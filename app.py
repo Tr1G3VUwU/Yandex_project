@@ -16,8 +16,8 @@ with app.app_context():
 
 @app.route("/index")
 def index():
-    user = find_user(session["email"])
-    return render_template("index.html", user=user)
+    # user = find_user(session["email"])
+    return render_template("index.html", images=["1.jpg", "2.jpg", "3.jpg"])
 
 
 @app.route("/register", methods=["GET", "POST"])

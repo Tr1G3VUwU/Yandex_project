@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, url_for
 
+# Для проверки файлов
 app = Flask(__name__)
 
 

@@ -25,17 +25,12 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav me-auto mb-2 mb-md-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Вернуться в главное меню</a>
+                        <a class="nav-link active" aria-current="page" href="/iri">Вернуться в главное меню</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" aria-disabled="true" href="#">Выйти из аккаунта</a>
+                        <a class="nav-link" aria-disabled="true" href="/exit">Выйти из аккаунта</a>
                     </li>
                 </ul>
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="манга, новелла, книги"
-                           aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Поиск</button>
-                </form>
             </div>
         </nav>
     </header>
@@ -44,7 +39,7 @@
     <body data-bs-theme="dark">
     <h1>Форма для регистрации в суперсекретной системе</h1>
     <div>
-        <form class="login_form" method="post">
+        <form class="login_form" method="post" enctype=multipart/form-data>
             <div class="card text-white bg-dark">
                 <h5 class="card-header">Название книги/манги</h5>
                 <div class="card-body">
@@ -67,14 +62,10 @@
                 </div>
             </div>
             <div class="card text-white bg-dark">
-                <h5 class="card-header">Выберите тип произведения</h5>
+                <h5 class="card-header">Линк произведения на английском, Пробелы замените на _</h5>
                 <div class="card-body">
-                    <div class="form-group">
-                        <select class="form-control" id="classSelect" name="class">
-                            <option>Манга/Коммикс</option>
-                            <option>Книга/Новелла</option>
-                        </select>
-                    </div>
+                    <input type="text" class="form-control" id="Link" aria-describedby="emailHelp"
+                           placeholder="" name="Link">
                 </div>
             </div>
             <div class="card text-white bg-dark">
@@ -90,8 +81,8 @@
                 <h5 class="card-header">Обложка произведения</h5>
                 <div class="card-body">
                     <div class="form-group">
-                        <label for="photo">Приложите фотографию</label>
-                        <input type="file" class="form-control-file" id="photo" name="file">
+                        <label>Приложите фотографию</label>
+                        <input type="file" class="form-control-file" name="png_file" accept=".png">
                     </div>
                 </div>
             </div>
@@ -99,10 +90,10 @@
                 <h5 class="card-header">Главы Произведения</h5>
                 <div class="card-body">
                     <div class="form-group">
-                        <label for="photo">Приложите zip-архив, состоящий из пронумерованых файлов("1", "2", и т.д.), в
+                        <label>Приложите zip-архив, состоящий из пронумерованых файлов("1", "2", и т.д.), в
                             которых так же будут пронумерованы страницы(манга/коммиксы) или просто текст с
                             произведением(книга/новелла)</label>
-                        <input type="file" class="form-control-file" id="zip" name="zip">
+                        <input type="file" class="form-control-file" name="zip_file" accept=".zip">
                     </div>
                 </div>
             </div>
